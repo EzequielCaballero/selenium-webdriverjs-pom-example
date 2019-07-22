@@ -58,6 +58,10 @@ class DriverLifeCycle {
 
   static openURL = async (url: string) => {
     await DriverLifeCycle.browser.get(url);
+    await DriverLifeCycle.browser
+      .manage()
+      .window()
+      .maximize();
   };
 
   static cleanUp = async () => {
