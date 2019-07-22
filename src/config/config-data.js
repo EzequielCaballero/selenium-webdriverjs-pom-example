@@ -19,7 +19,11 @@ export const config = {
             }
         }
     },
-    //It is better to config IE browser manually for testing purposes
+    /**
+     * It is better to config IE browser manually for testing purposes
+     * Zoom: always in 100%
+     * Security zone config: the same for all areas
+     */
     iexplorer: {
         browserName: "ie",
         options: "none"
