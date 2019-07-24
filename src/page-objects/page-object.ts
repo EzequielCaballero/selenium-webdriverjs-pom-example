@@ -17,9 +17,9 @@ class PageObject {
   }
 
   //STATIC WAIT
-  public staticWait = async () => {
+  public staticWait = async (timer: number) => {
     try {
-      this.browser.sleep(10000);
+      await this.browser.sleep(timer);
     } catch (error) {
       console.log(`Error in static wait - ${error}`);
     }
@@ -41,7 +41,7 @@ class PageObject {
     nameFile: string
   ) => {
     try {
-      await this.staticWait();
+      await this.staticWait(1000);
       //(1) Get the screenshot (if is active)
       let img64;
       if (screenshotMethod !== "none") {
