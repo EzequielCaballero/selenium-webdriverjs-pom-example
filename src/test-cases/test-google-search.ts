@@ -28,7 +28,7 @@ class TestGoogleSearch extends DriverLifeCycle {
         await DriverLifeCycle.cleanUp();
       });
       //SECTION 1
-      context("Go to google main page", async function() {
+      context("Go to google main page", function() {
         //CONDITION 1
         it("The main page should be displayed", async function() {
           await DriverLifeCycle.openURL(data.url);
@@ -45,7 +45,7 @@ class TestGoogleSearch extends DriverLifeCycle {
         });
       });
       //SECTION 2
-      context("Search a value and check browser title", async function() {
+      context("Search a value and check browser title", function() {
         //CONDITION 2
         it("The page title should include search value", async function() {
           await page_Google.insert_value(data.valueToSearch);
