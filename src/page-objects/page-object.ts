@@ -37,6 +37,7 @@ class PageObject {
   //TAKE SCREENSHOT
   public takeEvidence = async (
     screenshotMethod: string,
+    browserName: string,
     page: string,
     nameFile: string
   ) => {
@@ -54,13 +55,13 @@ class PageObject {
         //(3) Get today's date
         let fullDate: any = await this.getDate();
         //(4) Validate folder path
-        if (!(await this.validateFolderPath(page, fullDate.today))) {
+        if (
+          !(await this.validateFolderPath(page, fullDate.today, browserName))
+        ) {
           throw new Error();
         }
         //(5) Define the full path
-        let path: string = `evidence/${page}/${fullDate.today}/${
-          this.screenshot_counter
-        }-${nameFile}_(${fullDate.time}).png`;
+        let path: string = `evidence/${page}/${fullDate.today}/${this.screenshot_counter}-${nameFile}_(${fullDate.time}).png`;
         //(6) Create the file
         fs.writeFileSync(path, img64, "base64");
       } else return;
@@ -71,13 +72,20 @@ class PageObject {
 
   /* INTERNAL METHODS */
 
-  private validateFolderPath(folder: string, subfolder: string): boolean {
+  private validateFolderPath(
+    page: string,
+    day: string,
+    browser: string
+  ): boolean {
     try {
-      if (!fs.existsSync(`evidence/${folder}`)) {
-        fs.mkdirSync(`evidence/${folder}`);
+      if (!fs.existsSync(`evidence/${page}`)) {
+        fs.mkdirSync(`evidence/${page}`);
       }
-      if (!fs.existsSync(`evidence/${folder}/${subfolder}`)) {
-        fs.mkdirSync(`evidence/${folder}/${subfolder}`);
+      if (!fs.existsSync(`evidence/${page}/${day}`)) {
+        fs.mkdirSync(`evidence/${page}/${day}`);
+      }
+      if (!fs.existsSync(`evidence/${page}/${day}/${browser}`)) {
+        fs.mkdirSync(`evidence/${page}/${day}/${browser}`);
       }
       return true;
     } catch (error) {

@@ -11,7 +11,7 @@ let screenshotMethod: string = "desktop";
  * 'firefox'
  * 'ie'
  */
-let browser = "ie";
+let browser = "chrome";
 
 //START
 let test: TestCase = new TestCase();

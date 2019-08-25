@@ -32,6 +32,7 @@ class TestGoogleSearch extends DriverLifeCycle {
         await DriverLifeCycle.openURL(data.url);
         await page_Google.takeEvidence(
           screenshotMethod,
+          browserName,
           data.page,
           "page-displayed"
         );
@@ -47,6 +48,7 @@ class TestGoogleSearch extends DriverLifeCycle {
         let result: string = await DriverLifeCycle.browser.getTitle();
         await page_Google.takeEvidence(
           screenshotMethod,
+          browserName,
           data.page,
           "page-results"
         );
