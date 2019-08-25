@@ -27,33 +27,39 @@ class TestGoogleSearch extends DriverLifeCycle {
         page_Google = await new PageGoogle(DriverLifeCycle.browser);
         await DriverLifeCycle.cleanUp();
       });
-      //CONDITION 1
-      it("Go to google main page", async function() {
-        await DriverLifeCycle.openURL(data.url);
-        await page_Google.takeEvidence(
-          screenshotMethod,
-          browserName,
-          data.page,
-          "page-displayed"
-        );
-        //VALIDATION(!)
-        expect(await DriverLifeCycle.browser.getCurrentUrl()).to.equal(
-          data.url
-        );
+      //SECTION 1
+      context("Go to google main page", async function() {
+        //CONDITION 1
+        it("The main page should be displayed", async function() {
+          await DriverLifeCycle.openURL(data.url);
+          await page_Google.takeEvidence(
+            screenshotMethod,
+            browserName,
+            data.page,
+            "page-displayed"
+          );
+          //VALIDATION(!)
+          expect(await DriverLifeCycle.browser.getCurrentUrl()).to.equal(
+            data.url
+          );
+        });
       });
-      //CONDITION 2
-      it("Search a value and check browser title", async function() {
-        await page_Google.insert_value(data.valueToSearch);
-        await page_Google.dynamicWait(page_Google.Box_results); // (!)
-        let result: string = await DriverLifeCycle.browser.getTitle();
-        await page_Google.takeEvidence(
-          screenshotMethod,
-          browserName,
-          data.page,
-          "page-results"
-        );
-        //VALIDATION (!)
-        expect(result).to.equal(`${data.valueToSearch} - Google Search`);
+      //SECTION 2
+      context("Search a value and check browser title", async function() {
+        //CONDITION 2
+        it("The page title should include search value", async function() {
+          await page_Google.insert_value(data.valueToSearch);
+          await page_Google.dynamicWait(page_Google.Box_results); // (!)
+          let result: string = await DriverLifeCycle.browser.getTitle();
+          await page_Google.takeEvidence(
+            screenshotMethod,
+            browserName,
+            data.page,
+            "page-results"
+          );
+          //VALIDATION (!)
+          expect(result).to.equal(`${data.valueToSearch} - Google Search`);
+        });
       });
       //FINALLY
       after(async () => {
