@@ -53,7 +53,7 @@ class PageObject {
         //(2) Increase the counter
         this.screenshot_counter += 1;
         //(3) Get today's date
-        let fullDate: any = await this.getDate();
+        let fullDate: any = await this.getDateTime();
         //(4) Validate folder path
         if (
           !(await this.validateFolderPath(page, fullDate.today, browserName))
@@ -94,7 +94,7 @@ class PageObject {
     }
   }
 
-  private getDate(): any {
+  private getDateTime(): any {
     let fullDate: string = new Date().toLocaleDateString("en-US", {
       day: "2-digit",
       month: "2-digit",
