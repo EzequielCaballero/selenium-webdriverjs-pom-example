@@ -61,7 +61,7 @@ class PageObject {
           throw new Error();
         }
         //(5) Define the full path
-        let path: string = `evidence/${page}/${fullDate.today}/${this.screenshot_counter}-${nameFile}_(${fullDate.time}).png`;
+        let path: string = `evidence/${page}/${fullDate.today}/${browserName}/${this.screenshot_counter}-${nameFile}_(${fullDate.time}).png`;
         //(6) Create the file
         fs.writeFileSync(path, img64, "base64");
       } else return;
