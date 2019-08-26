@@ -17,6 +17,12 @@
             "--timeout",
             "999999",
             "--colors",
+            "--reporter", //START - REPORTER CONFIG
+            "mochawesome",
+            "--reporter-options",
+            "reportDir=report",
+            "--reporter-options",
+            "reportFilename=google-search", //END - REPORTER CONFIG
             "${workspaceFolder}/src/test.ts"
         ],
         "internalConsoleOptions": "openOnSessionStart"
