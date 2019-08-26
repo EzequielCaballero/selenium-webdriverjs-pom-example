@@ -33,6 +33,7 @@ The project was tested against three (3) browsers, which are: **Chrome / Firefox
 ![Image of result in console](./console-result.PNG)
 
 ***Expected result in html (Report)***
+
 Using custom reporter [Mochawesome](https://github.com/adamgruber/mochawesome) to generate the html report.
 
 ![Image of result in console](./html-result.PNG)
