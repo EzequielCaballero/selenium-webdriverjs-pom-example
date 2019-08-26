@@ -4,7 +4,7 @@
     "description": "Test built as an example using WebdriverJS (selenium) + Mocha + Chai and Typescript, following POM pattern (based on OOP paradigm)",
     "main": "./src/test.ts",
     "scripts": {
-        "test": "mocha --require @babel/register -r ts-node/register --recursive --timeout 10000 src/test.ts",
+        "test": "mocha --require @babel/register -r ts-node/register --recursive --timeout 999999 --reporter mochawesome --reporter-options reportDir=report,reportFilename=google-search src/test.ts",
         "build": "npx babel ./src --out-dir lib --extensions '.ts'",
         "tsc": "tsc"
     },
@@ -17,6 +17,7 @@
         "@types/selenium-webdriver": "^4.0.0",
         "chai": "^4.2.0",
         "mocha": "^6.1.4",
+        "mochawesome": "^4.1.0",
         "screenshot-desktop": "^1.8.0",
         "selenium-webdriver": "^4.0.0-alpha.4",
         "typescript": "^3.5.2"
