@@ -47,7 +47,7 @@ class TestGoogleSearch extends DriverLifeCycle {
       //SECTION 2
       context("Search a value and check browser title", function() {
         //CONDITION 2
-        it("The page title should include search value", async function() {
+        it("The page title should include the value searched", async function() {
           await page_Google.insert_value(data.valueToSearch);
           await page_Google.dynamicWait(page_Google.Box_results); // (!)
           let result: string = await DriverLifeCycle.browser.getTitle();
