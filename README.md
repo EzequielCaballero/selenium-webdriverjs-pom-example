@@ -4,7 +4,7 @@
 
 ***
 
-## **Technologies** | the project was built under...
+## **Technologies** | *the project was built under...*
 - **NodeJS**: is a JavaScript runtime built on Chrome's V8 JavaScript engine. 
 - **WebdriverJS (Selenium):** is an umbrella project encapsulating a variety of tools and libraries enabling web browser automation.
 - **Mocha:** is a feature-rich JavaScript test framework responsible for defining and running test suites.
@@ -16,7 +16,7 @@
 
 ***
 
-## **Automated steps** | as a proof of concept
+## **Automated steps** | *proof of concept*
 
 1. Open a browser
 2. Go to Google main page
@@ -32,16 +32,21 @@ The project was tested against three (3) browsers, which are: **Chrome / Firefox
 
 ![Image of result in console](./console-result.PNG)
 
+***Expected result in html (Report)***
+Using custom reporter [Mochawesome](https://github.com/adamgruber/mochawesome) to generate the html report.
+
+![Image of result in console](./html-result.PNG)
+
 ***
 
-## **Objective** | The main purpose of this project is to gain...
+## **Objective** | *prototype as example of...*
 - *Scalability:* first define a solid structure through which to start the task of mapping different pages (inside *page-objects* folder). 
 - *Reusability:* related to the previous point, implementing the POM pattern the idea is to reduce code and focus on functionality. 
-- *Flexibility:* in the future if the UI of a specific page change, you only need to adapt/update the page-object impacted.
+- *Flexibility:* in the future if the UI of a specific page change, you only need to adapt/update the page-object impacted (class).
   
 ***
 
-## **Useful links** | ideas to follow...
+## **Useful links** | *ideas to follow...*
 
 This project was built thanks to the huge community that surrounds automation testing. Some of the sources were...
 
